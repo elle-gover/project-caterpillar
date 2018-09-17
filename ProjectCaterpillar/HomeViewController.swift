@@ -8,8 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
+    @IBOutlet weak var userNameTextField: UITextField!
+    
+    @IBOutlet weak var petNameTextField: UITextField!
+    
+    @IBOutlet weak var lifeStagePicker: UIPickerView!
+    
+    @IBAction func addButton(_ sender: UIButton) {
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
