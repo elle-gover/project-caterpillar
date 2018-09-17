@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ProjectCaterpillar
 //
-//  Created by Elle Gover on 9/17/18.
+//  Created by Project Caterpillar on 9/17/18.
 //  Copyright © 2018 com.detroitlabs. All rights reserved.
 //
 
