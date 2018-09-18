@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="pme-rh-hK4">
             <objects>
-                <viewController id="VFQ-pp-NI6" sceneMemberID="viewController">
+                <viewController id="VFQ-pp-NI6" customClass="HomeViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OFo-yQ-Qch">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,12 +77,20 @@
                                 <state key="normal" title="Add">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addButton:" destination="VFQ-pp-NI6" eventType="touchUpInside" id="cmN-P4-Dmd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="jVe-jt-5M9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" largeContentSizeImage="home" selectedImage="home" id="NhB-uI-qFT"/>
+                    <connections>
+                        <outlet property="homeScreenImage" destination="X2I-XL-YhL" id="pBe-vz-5Dp"/>
+                        <outlet property="petNameTextField" destination="dzw-aO-vHE" id="Ea3-sB-A4H"/>
+                        <outlet property="userNameTextField" destination="XWG-Ix-mez" id="Ezr-jg-Ylj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ueX-ZA-WhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
