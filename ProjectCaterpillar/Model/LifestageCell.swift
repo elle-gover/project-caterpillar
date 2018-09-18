@@ -12,5 +12,10 @@ class LifestageCell: UITableViewCell {
 
     @IBOutlet weak var lifestageImage: UIImageView!
     @IBOutlet weak var lifestageLabel: UILabel!
+    func setDetails(lifestage: LifeStage) {
+        lifestageLabel.text = lifestage.name
+        lifestageImage.image = UIImage(named: lifestage.imgFile)
+        
+    }
     
 }
