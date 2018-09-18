@@ -63,6 +63,10 @@
 		17848EE02151253B00625D4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				433521372150488000CD5062 /* LifeStage.swift */,
+				4335213921504F1000CD5062 /* JournalEntry.swift */,
+				4335213D2150528300CD5062 /* User.swift */,
+				4335213B21504FF400CD5062 /* Swallowtail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,10 +98,6 @@
 		43CEB5BA214FFEB000D7835C /* ProjectCaterpillar */ = {
 			isa = PBXGroup;
 			children = (
-				433521372150488000CD5062 /* LifeStage.swift */,
-				4335213921504F1000CD5062 /* JournalEntry.swift */,
-				4335213D2150528300CD5062 /* User.swift */,
-				4335213B21504FF400CD5062 /* Swallowtail.swift */,
 				17848ED92151222700625D4C /* Storyboards */,
 				17848EE12151254400625D4C /* Controllers */,
 				17848EE02151253B00625D4C /* Model */,
