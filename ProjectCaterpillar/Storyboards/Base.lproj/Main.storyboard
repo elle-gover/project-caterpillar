@@ -43,7 +43,7 @@
         <scene sceneID="JcM-Er-kXM">
             <objects>
                 <tabBarController id="uLI-gT-4Qo" customClass="TabBarViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AKX-Ri-a5F">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="AKX-Ri-a5F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
