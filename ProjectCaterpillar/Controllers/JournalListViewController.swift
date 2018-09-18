@@ -16,14 +16,22 @@ class JournalListViewController: UITableViewController {
     var entry1 = JournalEntry(title: "Example Entry", stageOfLife: egg, details: "Found this egg and it's sweet", date: "Sep 18 2018")
     var entry2 = JournalEntry(title: "Another Entry", stageOfLife: caterpillar, details: "Aww it hatched", date: "Sep 20 2018")
     
+    
+    // MARK: - Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        populateEntryArray()
+        useLargeTitles()
+    }
+    
     func populateEntryArray() {
         journalEntries.append(entry1)
         journalEntries.append(entry2)
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        populateEntryArray()
+    
+    func useLargeTitles() {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source
