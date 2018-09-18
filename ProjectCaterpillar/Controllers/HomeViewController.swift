@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var userNameTextField: UITextField!
     
@@ -19,9 +19,31 @@ class HomeViewController: UIViewController {
     @IBAction func addButton(_ sender: UIButton) {
     }
     
+    @IBOutlet weak var lifeStagePicker: UIPickerView!
+    
+    let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
+    
+    func loadImage() {
+        homeScreenImage.image = UIImage(named: "Butterfly")
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return lifeStages[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return lifeStages.count
+    }
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadImage()
 
         // Do any additional setup after loading the view.
     }
