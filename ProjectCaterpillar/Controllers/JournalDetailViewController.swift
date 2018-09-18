@@ -9,15 +9,22 @@
 import UIKit
 
 class JournalDetailViewController: UITableViewController {
+    
+    // MARK: - Outlets
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var lifestageLabel: UILabel!
+    @IBOutlet weak var detailsView: UITextView!
+    
+    var entry1 = JournalEntry(title: "Example Entry", stageOfLife: egg, details: "Found this egg and it's sweet", date: "Sep 18 2018")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        titleLabel.text = entry1.title
+        dateLabel.text = entry1.date
+        lifestageLabel.text = entry1.stageOfLife.name
+        detailsView.text = entry1.details
     }
 
     // MARK: - Table view data source
@@ -29,7 +36,7 @@ class JournalDetailViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
 
     /*

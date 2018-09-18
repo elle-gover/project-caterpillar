@@ -20,8 +20,8 @@
 		43CEB5C3214FFEB300D7835C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CEB5C2214FFEB300D7835C /* Assets.xcassets */; };
 		43CEB5C6214FFEB300D7835C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CEB5C4214FFEB300D7835C /* LaunchScreen.storyboard */; };
 		43E867EA2151690F00BDBBC5 /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E867E92151690F00BDBBC5 /* JournalListViewController.swift */; };
-		43E867EC2151714A00BDBBC5 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E867EB2151714A00BDBBC5 /* JournalDetailViewController.swift */; };
 		43CEB5CE215174DC00D7835C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEB5CD215174DC00D7835C /* HomeViewController.swift */; };
+		43E867EE2151762200BDBBC5 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E867ED2151762200BDBBC5 /* JournalDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +40,8 @@
 		43CEB5C5214FFEB300D7835C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43CEB5C7214FFEB300D7835C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43E867E92151690F00BDBBC5 /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
-		43E867EB2151714A00BDBBC5 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
 		43CEB5CD215174DC00D7835C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		43E867ED2151762200BDBBC5 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +82,8 @@
 			children = (
 				43CEB5CD215174DC00D7835C /* HomeViewController.swift */,
 				17848EE22151257B00625D4C /* TabBarViewController.swift */,
+				43E867ED2151762200BDBBC5 /* JournalDetailViewController.swift */,
 				43E867E92151690F00BDBBC5 /* JournalListViewController.swift */,
-				43E867EB2151714A00BDBBC5 /* JournalDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -195,7 +195,7 @@
 				433521382150488000CD5062 /* LifeStage.swift in Sources */,
 				4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */,
 				43E867EA2151690F00BDBBC5 /* JournalListViewController.swift in Sources */,
-				43E867EC2151714A00BDBBC5 /* JournalDetailViewController.swift in Sources */,
+				43E867EE2151762200BDBBC5 /* JournalDetailViewController.swift in Sources */,
 				4335213E2150528300CD5062 /* User.swift in Sources */,
 				4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */,
 				17848EE32151257B00625D4C /* TabBarViewController.swift in Sources */,
