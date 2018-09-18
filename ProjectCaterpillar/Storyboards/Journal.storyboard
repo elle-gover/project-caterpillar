@@ -37,10 +37,10 @@
             </objects>
             <point key="canvasLocation" x="1833" y="-27"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Journal List View Controller-->
         <scene sceneID="4nL-t5-5WB">
             <objects>
-                <tableViewController id="Nk6-rF-gUM" sceneMemberID="viewController">
+                <tableViewController id="Nk6-rF-gUM" customClass="JournalListViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eue-pf-5eJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
