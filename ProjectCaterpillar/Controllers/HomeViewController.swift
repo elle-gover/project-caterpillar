@@ -10,6 +10,12 @@ import UIKit
 
 class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    var user: User?
+    
+    
+    let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
+
+    
     @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var petNameTextField: UITextField!
@@ -17,11 +23,10 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var homeScreenImage: UIImageView!
     
     @IBAction func addButton(_ sender: UIButton) {
+       collectUserData()
     }
     
     @IBOutlet weak var lifeStagePicker: UIPickerView!
-    
-    let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
     
     func loadImage() {
         homeScreenImage.image = UIImage(named: "Butterfly")
@@ -40,6 +45,12 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
    
     
+    func collectUserData()  {
+        let newUserName = userNameTextField.text!
+        let newPetName = petNameTextField.text!
+//        user = User(name: newUserName, pet: newPetName)
+//        let swallowtail = Swallowtail
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
