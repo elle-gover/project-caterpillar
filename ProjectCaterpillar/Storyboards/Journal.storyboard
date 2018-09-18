@@ -170,6 +170,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foX-d5-cm4">
+                                                    <rect key="frame" x="111" y="7" width="226" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -187,6 +194,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gHs-7n-3ZH">
+                                                    <rect key="frame" x="111" y="6" width="226" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -207,15 +221,15 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="550" id="R1C-4F-dIA">
-                                        <rect key="frame" x="0.0" y="132" width="375" height="550"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="532" id="R1C-4F-dIA">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="532"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R1C-4F-dIA" id="gpf-Sx-rEf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="549.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="531.66666666666663"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Entry Details" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SvP-8X-O4n">
-                                                    <rect key="frame" x="16" y="11" width="343" height="528"/>
+                                                    <rect key="frame" x="16" y="11" width="343" height="503"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -232,6 +246,16 @@
                             <outlet property="delegate" destination="h2G-nf-EVn" id="4fw-vI-dEV"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Entry" id="M7T-7f-U8u">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nbx-03-EBj"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FkJ-4o-MyN"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="dateField" destination="gHs-7n-3ZH" id="iRj-16-Wck"/>
+                        <outlet property="titleField" destination="foX-d5-cm4" id="Gge-fp-ncQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8qY-kG-Ssb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

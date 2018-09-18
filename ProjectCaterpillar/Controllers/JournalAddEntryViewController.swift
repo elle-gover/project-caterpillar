@@ -9,8 +9,14 @@
 import UIKit
 
 class JournalAddEntryViewController: UITableViewController {
-
+    
+    
+    // MARK: - Outlets
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var dateField: UITextField!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
