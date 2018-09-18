@@ -15,9 +15,7 @@ class LifestagesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let lifestageOne = LifeStage(name: "Egg", food: "Dill", stageDescription: "Eat eat eat", imgFile: "lifestage1", bulletPoints: ["This is so cool!", "I can't wait to be a butterfly"])
-        
-        lifestageObjects.append(lifestageOne)
+        lifestageObjects = populateLifestages()
 
     }
 
@@ -44,3 +42,4 @@ extension LifestagesViewController {
     }
     
 }
+
