@@ -12,6 +12,7 @@
 		17848EE72151295500625D4C /* Lifestages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17848EE62151295500625D4C /* Lifestages.storyboard */; };
 		17848EE92151296200625D4C /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17848EE82151296200625D4C /* Journal.storyboard */; };
 		17848EEB21516A4300625D4C /* LifestagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17848EEA21516A4300625D4C /* LifestagesViewController.swift */; };
+		17848EED21516F2500625D4C /* LifestageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17848EEC21516F2500625D4C /* LifestageCell.swift */; };
 		433521382150488000CD5062 /* LifeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433521372150488000CD5062 /* LifeStage.swift */; };
 		4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213921504F1000CD5062 /* JournalEntry.swift */; };
 		4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213B21504FF400CD5062 /* Swallowtail.swift */; };
@@ -28,6 +29,7 @@
 		17848EE62151295500625D4C /* Lifestages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lifestages.storyboard; sourceTree = "<group>"; };
 		17848EE82151296200625D4C /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
 		17848EEA21516A4300625D4C /* LifestagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestagesViewController.swift; sourceTree = "<group>"; };
+		17848EEC21516F2500625D4C /* LifestageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestageCell.swift; sourceTree = "<group>"; };
 		433521372150488000CD5062 /* LifeStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStage.swift; sourceTree = "<group>"; };
 		4335213921504F1000CD5062 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		4335213B21504FF400CD5062 /* Swallowtail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swallowtail.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				4335213921504F1000CD5062 /* JournalEntry.swift */,
 				4335213D2150528300CD5062 /* User.swift */,
 				4335213B21504FF400CD5062 /* Swallowtail.swift */,
+				17848EEC21516F2500625D4C /* LifestageCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				433521382150488000CD5062 /* LifeStage.swift in Sources */,
 				4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */,
+				17848EED21516F2500625D4C /* LifestageCell.swift in Sources */,
 				4335213E2150528300CD5062 /* User.swift in Sources */,
 				17848EEB21516A4300625D4C /* LifestagesViewController.swift in Sources */,
 				4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */,

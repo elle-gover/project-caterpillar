@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="150" id="rlh-Vf-KgG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LifestageCell" rowHeight="150" id="rlh-Vf-KgG" customClass="LifestageCell" customModule="ProjectCaterpillar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rlh-Vf-KgG" id="77s-Bw-qeJ">
@@ -41,6 +41,8 @@
                                     <color key="tintColor" red="0.32549019610000002" green="0.49803921569999998" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="lifestageImage" destination="4LK-jB-FFg" id="Vrg-Qw-jSr"/>
+                                    <outlet property="lifestageLabel" destination="yb8-OB-Tdj" id="fiA-Fg-uoW"/>
                                     <segue destination="qjq-sG-0Zl" kind="show" id="wWv-3V-xwA"/>
                                 </connections>
                             </tableViewCell>

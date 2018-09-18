@@ -20,3 +20,19 @@ class LifestagesViewController: UITableViewController {
     }
 
 }
+
+// MARK: Table Methods
+
+extension LifestagesViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LifestageCell", for: indexPath) as! LifestageCell
+        
+        return cell
+    }
+    
+}
