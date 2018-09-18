@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct LifeStage {
+class LifeStage: NSObject, Codable {
     var name: String
     var food: String
-    var description: String
+    var stageDescription: String
     var imgFile: String // this could be an image object
     var bulletPoints: [String]
 }

@@ -8,9 +8,16 @@
 
 import Foundation
 
-struct JournalEntry {
+class JournalEntry: NSObject, Codable {
     var title: String
     var stageOfLife: LifeStage
     var details: String
-    var date: Date // could be string if this data type proves hard to work with
+    var date: String // could be Date object
+    
+    init(title: String, stageOfLife: LifeStage, details: String, date: String) {
+        self.title = title
+        self.stageOfLife = stageOfLife
+        self.details = details
+        self.date = date
+    }
 }

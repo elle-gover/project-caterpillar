@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Swallowtail {
+class Swallowtail: Codable {
     var name: String
     var startDate: String
     var imgFileName: String // using string instead of img so we can save to .plist

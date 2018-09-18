@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct User {
+class User: NSObject, Codable {
     var name: String
     var pet: Swallowtail
+    
+    init(name: String, pet: Swallowtail) {
+        self.name = name
+        self.pet = pet
+    }
 }
