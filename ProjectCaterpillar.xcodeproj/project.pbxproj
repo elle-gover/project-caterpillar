@@ -11,6 +11,10 @@
 		17848EE52151282B00625D4C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17848EE42151282B00625D4C /* Home.storyboard */; };
 		17848EE72151295500625D4C /* Lifestages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17848EE62151295500625D4C /* Lifestages.storyboard */; };
 		17848EE92151296200625D4C /* Journal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17848EE82151296200625D4C /* Journal.storyboard */; };
+		433521382150488000CD5062 /* LifeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433521372150488000CD5062 /* LifeStage.swift */; };
+		4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213921504F1000CD5062 /* JournalEntry.swift */; };
+		4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213B21504FF400CD5062 /* Swallowtail.swift */; };
+		4335213E2150528300CD5062 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213D2150528300CD5062 /* User.swift */; };
 		43CEB5BC214FFEB000D7835C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEB5BB214FFEB000D7835C /* AppDelegate.swift */; };
 		43CEB5C1214FFEB000D7835C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CEB5BF214FFEB000D7835C /* Main.storyboard */; };
 		43CEB5C3214FFEB300D7835C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CEB5C2214FFEB300D7835C /* Assets.xcassets */; };
@@ -22,6 +26,10 @@
 		17848EE42151282B00625D4C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		17848EE62151295500625D4C /* Lifestages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lifestages.storyboard; sourceTree = "<group>"; };
 		17848EE82151296200625D4C /* Journal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Journal.storyboard; sourceTree = "<group>"; };
+		433521372150488000CD5062 /* LifeStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStage.swift; sourceTree = "<group>"; };
+		4335213921504F1000CD5062 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		4335213B21504FF400CD5062 /* Swallowtail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swallowtail.swift; sourceTree = "<group>"; };
+		4335213D2150528300CD5062 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		43CEB5B8214FFEB000D7835C /* ProjectCaterpillar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCaterpillar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CEB5BB214FFEB000D7835C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43CEB5C0214FFEB000D7835C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +63,10 @@
 		17848EE02151253B00625D4C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				433521372150488000CD5062 /* LifeStage.swift */,
+				4335213921504F1000CD5062 /* JournalEntry.swift */,
+				4335213D2150528300CD5062 /* User.swift */,
+				4335213B21504FF400CD5062 /* Swallowtail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				433521382150488000CD5062 /* LifeStage.swift in Sources */,
+				4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */,
+				4335213E2150528300CD5062 /* User.swift in Sources */,
+				4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */,
 				17848EE32151257B00625D4C /* TabBarViewController.swift in Sources */,
 				43CEB5BC214FFEB000D7835C /* AppDelegate.swift in Sources */,
 			);
