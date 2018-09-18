@@ -34,7 +34,7 @@ class JournalListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalList", for: indexPath)
-        cell.textLabel?.text = journalEntries[indexPath.row].title
+        cell.textLabel?.text = "\(journalEntries[indexPath.row].title), \(journalEntries[indexPath.row].date) "
         return cell
     }
 
