@@ -26,15 +26,19 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         toggleDisplayData()
     }
     
+    
+    @IBOutlet weak var petNameLabel: UILabel!
+    
     @IBOutlet weak var nameDisplayLabel: UILabel!
     @IBOutlet weak var lifeStagePicker: UIPickerView!
     @IBOutlet weak var petNameDisplayLabel: UILabel!
     @IBOutlet weak var lifeStagePickerDisplayLabel: UILabel!
     
-    
     func loadImage() {
         homeScreenImage.image = UIImage(named: "Butterfly")
     }
+    
+    @IBOutlet weak var addButtonOutlet: UIButton!
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -69,9 +73,13 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         userNameTextField.isHidden = true
         petNameTextField.isHidden = true
         nameDisplayLabel.isHidden = false
-        petNameDisplayLabel.isHidden = true
+        petNameDisplayLabel.isHidden = false
+        petNameLabel.isHidden = true
         lifeStagePickerDisplayLabel.isHidden = true
         nameDisplayLabel.text = user?.name
+        petNameDisplayLabel.text = pet?.name
+        addButtonOutlet.isHidden = true
+
     }
     
     override func viewDidLoad() {
@@ -79,6 +87,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         loadImage()
         populateLifeStage()
         nameDisplayLabel.isHidden = true
+        petNameDisplayLabel.isHidden = true
         
         var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
         pet = swallowTail
