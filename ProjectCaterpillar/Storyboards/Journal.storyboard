@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" title="Journal 🥚🐛🦋" id="BKG-X9-ZYs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z2D-ox-N0Z">
                             <connections>
-                                <segue destination="h2G-nf-EVn" kind="show" id="59J-8l-woj"/>
+                                <segue destination="h2G-nf-EVn" kind="show" id="gEM-mF-FaW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
