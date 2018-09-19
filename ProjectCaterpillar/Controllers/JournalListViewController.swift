@@ -57,18 +57,18 @@ class JournalListViewController: UITableViewController {
         }
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "JournalToAddEntry" {
+            guard let add = segue.destination as? JournalAddEntryViewController else { return }
+            add.delegate = self
+        }
     }
-    */
 
 }
 
+// MARK: - JournalAddEntryViewControllerDelegate Protocol
 extension JournalListViewController: JournalAddEntryViewControllerDelegate {
     func addDidCancel(_ controller: JournalAddEntryViewController) {
         navigationController?.popViewController(animated: true)

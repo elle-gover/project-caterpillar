@@ -23,22 +23,30 @@ class JournalAddEntryViewController: UITableViewController {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var lifestagePicker: UIPickerView!
+    @IBOutlet weak var detailsView: UITextView!
     
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         lifestagePicker.dataSource = self
         lifestagePicker.delegate = self
     }
 
+    // temporary lifestage data, replace w/ real lifestages from database
     let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
     
     @IBAction func save() {
-        guard let entry = newEntry else { return }
+        let entry = createNewEntry()
         delegate?.add(self, didFinishAdding: entry)
     }
     
     @IBAction func cancel() {
         delegate?.addDidCancel(self)
+    }
+    
+    func createNewEntry() -> JournalEntry {
+        newEntry = JournalEntry(title: titleField.text!, stageOfLife: egg, details: detailsView.text!, date: dateField.text!)
+        return newEntry!
     }
 }
 
