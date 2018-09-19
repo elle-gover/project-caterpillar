@@ -281,8 +281,16 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Entry" id="M7T-7f-U8u">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nbx-03-EBj"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FkJ-4o-MyN"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nbx-03-EBj">
+                            <connections>
+                                <action selector="cancel" destination="h2G-nf-EVn" id="feo-v5-1DH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FkJ-4o-MyN">
+                            <connections>
+                                <action selector="save" destination="h2G-nf-EVn" id="nLw-sO-mMQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

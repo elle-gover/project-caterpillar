@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol JournalAddEntryViewControllerDelegate: class {
+    func addDidCancel(_ controller: JournalAddEntryViewController)
+    func add(_ controller: JournalAddEntryViewController, didFinishAdding item: JournalEntry)
+}
+
 class JournalAddEntryViewController: UITableViewController {
     
+    // MARK: - Properties
+    weak var delegate: JournalAddEntryViewControllerDelegate?
     
     // MARK: - Outlets
     @IBOutlet weak var titleField: UITextField!
@@ -23,6 +30,14 @@ class JournalAddEntryViewController: UITableViewController {
     }
 
     let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
+    
+    @IBAction func save() {
+        
+    }
+    
+    @IBAction func cancel() {
+        
+    }
 }
 
 extension JournalAddEntryViewController: UIPickerViewDataSource, UIPickerViewDelegate {
