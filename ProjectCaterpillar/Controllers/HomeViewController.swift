@@ -13,10 +13,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     let lifeStagesDatabase = LifestagesDatabase()
     var user: User?
     var pet: Swallowtail?
-    
-    
     var lifeStages: [LifeStage] = []
-
     
     @IBOutlet weak var userNameTextField: UITextField!
     
@@ -45,13 +42,15 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return lifeStages.count
     }
-   
-    
+
     func collectUserData()  {
         let newUserName = userNameTextField.text!
         pet?.name = petNameTextField.text!
+        pet?.stageOfLife = lifeStages[lifeStagePicker.selectedRow(inComponent: 0)]
         user = User(name: newUserName, pet: pet!)
         print(user?.name)
+        print(pet?.stageOfLife.name)
+        
     }
     
     func populateLifeStage() {
@@ -59,8 +58,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
             lifeStages.append(stage)
         }
     }
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,26 +67,11 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
         pet = swallowTail
         
-        
-        
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }
