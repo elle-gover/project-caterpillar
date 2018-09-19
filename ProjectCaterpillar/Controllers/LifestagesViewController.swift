@@ -10,11 +10,16 @@ import UIKit
 
 class LifestagesViewController: UITableViewController {
     
+    // MARK: Properties
+    
     var lifestageCollection: [LifeStage] = []
+    
+    // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         populateLifestageCollection()
+        navigationController?.navigationBar.prefersLargeTitles = true
 
     }
 
@@ -34,9 +39,7 @@ extension LifestagesViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LifestageCell", for: indexPath) as! LifestageCell
-        
         cell.setDetails(lifestage: lifestageCollection[indexPath.row])
-        
         return cell
     }
     
@@ -52,8 +55,5 @@ extension LifestagesViewController {
             lifestageCollection.append(stage)
         }
     }
-    
-    
-    
 }
 

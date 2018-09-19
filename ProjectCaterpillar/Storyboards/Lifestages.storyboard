@@ -10,44 +10,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lifestages View Controller-->
+        <!--Lifestages-->
         <scene sceneID="ypa-ho-89C">
             <objects>
                 <tableViewController id="lPz-2p-for" customClass="LifestagesViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="85s-KY-f1i">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="85s-KY-f1i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.32549019610000002" green="0.49803921569999998" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LifestageCell" rowHeight="150" id="rlh-Vf-KgG" customClass="LifestageCell" customModule="ProjectCaterpillar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rlh-Vf-KgG" id="77s-Bw-qeJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LK-jB-FFg">
+                                        <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LK-jB-FFg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="150" id="XaL-mV-ChV"/>
+                                                <constraint firstAttribute="height" constant="150" id="C4v-Z7-D3B"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-R8-tbj">
-                                            <rect key="frame" x="16" y="104" width="343" height="35"/>
+                                            <rect key="frame" x="16" y="104" width="318" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                     </subviews>
                                     <color key="tintColor" red="0.32549019610000002" green="0.49803921569999998" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="leading" secondItem="77s-Bw-qeJ" secondAttribute="leading" id="SFS-ke-O2W"/>
-                                        <constraint firstAttribute="trailing" secondItem="4LK-jB-FFg" secondAttribute="trailing" id="ZLQ-hl-gGz"/>
-                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="top" secondItem="77s-Bw-qeJ" secondAttribute="top" id="rR8-PW-RoY"/>
-                                        <constraint firstAttribute="bottom" secondItem="4LK-jB-FFg" secondAttribute="bottom" id="zyQ-At-9kE"/>
+                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="leading" secondItem="77s-Bw-qeJ" secondAttribute="leading" id="F5m-PW-KjU"/>
+                                        <constraint firstAttribute="trailing" secondItem="4LK-jB-FFg" secondAttribute="trailing" id="SZ1-F7-l9G"/>
+                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="top" secondItem="77s-Bw-qeJ" secondAttribute="top" id="pKG-EG-P6F"/>
+                                        <constraint firstAttribute="bottom" secondItem="4LK-jB-FFg" secondAttribute="bottom" id="vEx-CT-xpG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.49803921569999998" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="lifestageImage" destination="4LK-jB-FFg" id="Vrg-Qw-jSr"/>
                                     <outlet property="lifestageLabel" destination="h4P-R8-tbj" id="S1N-74-Ovm"/>
@@ -61,7 +64,7 @@
                             <outlet property="delegate" destination="lPz-2p-for" id="Vfy-mw-sWO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="mWy-oB-tpI"/>
+                    <navigationItem key="navigationItem" title="Lifestages" id="mWy-oB-tpI"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lh8-eQ-k7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,6 +95,15 @@
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.32549019610000002" green="0.49803921569999998" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                            <color key="textColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="45"/>
+                            <color key="textColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
