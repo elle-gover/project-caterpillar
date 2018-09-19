@@ -28,6 +28,7 @@ class JournalDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayEntryData()
+        populateTextFields()
         enableLifestagePicker()
         toggleFieldVisibility()
         togglePickerVisibility()
@@ -38,6 +39,11 @@ class JournalDetailViewController: UITableViewController {
         dateLabel.text = entry1.date
         lifestageLabel.text = entry1.stageOfLife.name
         detailsView.text = entry1.details
+    }
+    
+    func populateTextFields() {
+        titleField.text = entry1.title
+        dateField.text = entry1.date
     }
     
     func enableLifestagePicker() {
