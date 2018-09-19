@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     var user: User?
     var pet: Swallowtail?
     var lifeStages: [LifeStage] = []
+    var userPetIcon = "Butterfly"
     
     @IBOutlet weak var userNameTextField: UITextField!
     
@@ -24,6 +25,8 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBAction func addButton(_ sender: UIButton) {
        collectUserData()
         toggleDisplayData()
+    loadImage(image: updatePetIcon())
+     
     }
     
     
@@ -34,9 +37,17 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var petNameDisplayLabel: UILabel!
     @IBOutlet weak var lifeStagePickerDisplayLabel: UILabel!
     
-    func loadImage() {
-        homeScreenImage.image = UIImage(named: "Butterfly")
+    func loadImage(image: String) {
+        homeScreenImage.image = UIImage(named: image)
+//        if userPetIcon
     }
+    
+    func updatePetIcon() -> String {
+        guard let userPetIcon = pet?.stageOfLife.iconFile else { return "Butterfly" }
+    return userPetIcon
+    }
+    
+    
     
     @IBOutlet weak var addButtonOutlet: UIButton!
     
@@ -84,7 +95,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadImage()
+        loadImage(image: userPetIcon)
         populateLifeStage()
         nameDisplayLabel.isHidden = true
         petNameDisplayLabel.isHidden = true
