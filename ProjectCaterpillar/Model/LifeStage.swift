@@ -24,4 +24,8 @@ class LifeStage: NSObject, Codable {
     }
 }
 
+// Our LifeStages:
 
+let egg = LifeStage(name: "egg", food: "none yet", stageDescription: "This is an egg", imgFile: "egg.jpg", bulletPoints: ["This sure is an egg", "Yep it is"])
+let caterpillar = LifeStage(name: "caterpillar", food: "dill", stageDescription: "A caterpillar!", imgFile: "caterpillar.jpg", bulletPoints: ["Kinda cute but kinda gross", "Eats so much"])
+let butterfly = LifeStage(name: "butterfly", food: "nectar?", stageDescription: "Has wings now", imgFile: "butterfly.jpg", bulletPoints: ["So pretty", "But still a bug"])
