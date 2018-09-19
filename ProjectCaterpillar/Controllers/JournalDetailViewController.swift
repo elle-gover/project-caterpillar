@@ -22,15 +22,18 @@ class JournalDetailViewController: UITableViewController {
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var lifestagePicker: UIPickerView!
     
-    
+    // dummy data to use for now - remove when we start passing in real data:
     var entry1 = JournalEntry(title: "Example Entry", stageOfLife: egg, details: "Found this egg and it's sweet", date: "Sep 18 2018")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        displayEntryData()
         enableLifestagePicker()
         toggleFieldVisibility()
         togglePickerVisibility()
-        
+    }
+    
+    func displayEntryData() {
         titleLabel.text = entry1.title
         dateLabel.text = entry1.date
         lifestageLabel.text = entry1.stageOfLife.name
