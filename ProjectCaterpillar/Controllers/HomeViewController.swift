@@ -10,7 +10,9 @@ import UIKit
 
 class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    let lifeStagesDatabase = LifestagesDatabase()
     var user: User?
+    var pet: Swallowtail?
     
     
     let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
@@ -47,14 +49,22 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func collectUserData()  {
         let newUserName = userNameTextField.text!
-        let newPetName = petNameTextField.text!
-//        user = User(name: newUserName, pet: newPetName)
-//        let swallowtail = Swallowtail
+        pet?.name = petNameTextField.text!
+        user = User(name: newUserName, pet: pet!)
+        print(user?.name)
     }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadImage()
+        
+        var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
+        pet = swallowTail
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
