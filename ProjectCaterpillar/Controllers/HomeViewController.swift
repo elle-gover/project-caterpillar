@@ -15,7 +15,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     var pet: Swallowtail?
     
     
-    let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
+    var lifeStages: [LifeStage] = []
 
     
     @IBOutlet weak var userNameTextField: UITextField!
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return lifeStages[row]
+        return lifeStages[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -54,11 +54,18 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         print(user?.name)
     }
     
+    func populateLifeStage() {
+        for stage in lifeStagesDatabase.lifestages {
+            lifeStages.append(stage)
+        }
+    }
+    
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadImage()
+        populateLifeStage()
         
         var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
         pet = swallowTail
