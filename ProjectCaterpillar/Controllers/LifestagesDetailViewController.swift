@@ -20,7 +20,7 @@ class LifestagesDetailViewController: UIViewController {
     
     // MARK: Properties
     
-    var lifestage: LifeStage!
+    var lifestage: LifeStage?
     
     // MARK: Methods
     
@@ -43,6 +43,7 @@ class LifestagesDetailViewController: UIViewController {
 extension LifestagesDetailViewController {
     
     private func setLifestageDetails() {
+        guard let lifestage = lifestage else { return }
         lifestageDetailImage.image = UIImage(named: lifestage.imgFile)
         lifestageTitleLabel.text = lifestage.name
         lifestageDescriptionLabel.text = lifestage.stageDescription
@@ -50,5 +51,4 @@ extension LifestagesDetailViewController {
         bulletPointOneFact.text = lifestage.bulletPoints[0]
         bulletPointTwoFact.text = lifestage.bulletPoints[1]
     }
-    
 }
