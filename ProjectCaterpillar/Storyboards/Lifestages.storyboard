@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="877.60000000000002" y="872.66009852216757"/>
         </scene>
-        <!--View Controller-->
+        <!--Lifestages Detail View Controller-->
         <scene sceneID="LzD-Be-Mf3">
             <objects>
-                <viewController id="qjq-sG-0Zl" sceneMemberID="viewController">
+                <viewController id="qjq-sG-0Zl" customClass="LifestagesDetailViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eUo-PA-V2X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
