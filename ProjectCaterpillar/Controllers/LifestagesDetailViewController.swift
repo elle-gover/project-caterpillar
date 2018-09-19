@@ -28,11 +28,27 @@ class LifestagesDetailViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9882352941, green: 0.9882352941, blue: 0.9882352941, alpha: 1)
         navigationController?.navigationBar.prefersLargeTitles = false
+        setLifestageDetails()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+}
 
+
+// MARK: Private methods
+
+extension LifestagesDetailViewController {
+    
+    private func setLifestageDetails() {
+        lifestageDetailImage.image = UIImage(named: lifestage.imgFile)
+        lifestageTitleLabel.text = lifestage.name
+        lifestageDescriptionLabel.text = lifestage.stageDescription
+        foodDetailsLabel.text = lifestage.food
+        bulletPointOneFact.text = lifestage.bulletPoints[0]
+        bulletPointTwoFact.text = lifestage.bulletPoints[1]
     }
     
 }

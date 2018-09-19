@@ -37,7 +37,7 @@ class LifestagesViewController: UITableViewController {
 
 }
 
-// MARK: Table Methods
+// MARK: Table methods
 
 extension LifestagesViewController {
     
