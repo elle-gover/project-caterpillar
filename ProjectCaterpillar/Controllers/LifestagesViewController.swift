@@ -10,14 +10,16 @@ import UIKit
 
 class LifestagesViewController: UITableViewController {
     
-    var lifestageObjects: [LifeStage] = []
+    // MARK: Properties
+    
+    var lifestageCollection: [LifeStage] = []
+    
+    // MARK: Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let lifestageOne = LifeStage(name: "Egg", food: "Dill", stageDescription: "Eat eat eat", imgFile: "lifestage1", bulletPoints: ["This is so cool!", "I can't wait to be a butterfly"])
-        
-        lifestageObjects.append(lifestageOne)
+        populateLifestageCollection()
+        navigationController?.navigationBar.prefersLargeTitles = true
 
     }
 
@@ -32,15 +34,26 @@ class LifestagesViewController: UITableViewController {
 extension LifestagesViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return lifestageCollection.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LifestageCell", for: indexPath) as! LifestageCell
-        
-        cell.setDetails(lifestage: lifestageObjects[0])
-        
+        cell.setDetails(lifestage: lifestageCollection[indexPath.row])
         return cell
     }
     
 }
+
+// MARK: Private methods
+
+extension LifestagesViewController {
+    
+    private func populateLifestageCollection() {
+        let lifestagesDatabase = LifestagesDatabase()
+        for stage in lifestagesDatabase.lifestages {
+            lifestageCollection.append(stage)
+        }
+    }
+}
+
