@@ -68,3 +68,19 @@ class JournalListViewController: UITableViewController {
     */
 
 }
+
+extension JournalListViewController: JournalAddEntryViewControllerDelegate {
+    func addDidCancel(_ controller: JournalAddEntryViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func add(_ controller: JournalAddEntryViewController, didFinishAdding item: JournalEntry) {
+        let newRowIndex = journalEntries.count
+        journalEntries.append(item)
+        
+        let indexPath = IndexPath(row: newRowIndex, section: 0)
+        tableView.insertRows(at: [indexPath], with: .automatic)
+        
+        navigationController?.popViewController(animated: true)
+    }
+}

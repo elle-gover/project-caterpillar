@@ -17,6 +17,7 @@ class JournalAddEntryViewController: UITableViewController {
     
     // MARK: - Properties
     weak var delegate: JournalAddEntryViewControllerDelegate?
+    var newEntry: JournalEntry?
     
     // MARK: - Outlets
     @IBOutlet weak var titleField: UITextField!
@@ -32,11 +33,12 @@ class JournalAddEntryViewController: UITableViewController {
     let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
     
     @IBAction func save() {
-        
+        guard let entry = newEntry else { return }
+        delegate?.add(self, didFinishAdding: entry)
     }
     
     @IBAction func cancel() {
-        
+        delegate?.addDidCancel(self)
     }
 }
 
