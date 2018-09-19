@@ -38,7 +38,7 @@
                     <navigationItem key="navigationItem" title="Journal 🥚🐛🦋" id="BKG-X9-ZYs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z2D-ox-N0Z">
                             <connections>
-                                <segue destination="h2G-nf-EVn" kind="show" id="59J-8l-woj"/>
+                                <segue destination="h2G-nf-EVn" kind="show" identifier="JournalToAddEntry" id="gEM-mF-FaW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -281,12 +281,21 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Add Entry" id="M7T-7f-U8u">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nbx-03-EBj"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FkJ-4o-MyN"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="nbx-03-EBj">
+                            <connections>
+                                <action selector="cancel" destination="h2G-nf-EVn" id="feo-v5-1DH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="FkJ-4o-MyN">
+                            <connections>
+                                <action selector="save" destination="h2G-nf-EVn" id="nLw-sO-mMQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateField" destination="gHs-7n-3ZH" id="iRj-16-Wck"/>
+                        <outlet property="detailsView" destination="SvP-8X-O4n" id="tzs-EZ-ZNW"/>
                         <outlet property="lifestagePicker" destination="rlV-sI-XA4" id="VkN-3x-nyX"/>
                         <outlet property="titleField" destination="foX-d5-cm4" id="Gge-fp-ncQ"/>
                     </connections>
