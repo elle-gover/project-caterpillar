@@ -85,6 +85,13 @@
                                     <action selector="addButton:" destination="VFQ-pp-NI6" eventType="touchUpInside" id="cmN-P4-Dmd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELw-19-slX">
+                                <rect key="frame" x="83" y="132" width="231" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="jVe-jt-5M9"/>
@@ -93,6 +100,9 @@
                     <connections>
                         <outlet property="homeScreenImage" destination="X2I-XL-YhL" id="pBe-vz-5Dp"/>
                         <outlet property="lifeStagePicker" destination="x9e-4O-9Vh" id="j06-ca-M5y"/>
+                        <outlet property="lifeStagePickerDisplayLabel" destination="0Nc-RQ-EbR" id="Oqu-Qh-YEE"/>
+                        <outlet property="nameDisplayLabel" destination="ELw-19-slX" id="A3a-J0-rbz"/>
+                        <outlet property="petNameDisplayLabel" destination="cC0-Au-Voq" id="nl4-w0-gWm"/>
                         <outlet property="petNameTextField" destination="dzw-aO-vHE" id="Ea3-sB-A4H"/>
                         <outlet property="userNameTextField" destination="XWG-Ix-mez" id="Ezr-jg-Ylj"/>
                     </connections>
