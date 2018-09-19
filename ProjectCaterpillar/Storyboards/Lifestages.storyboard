@@ -54,7 +54,7 @@
                                 <connections>
                                     <outlet property="lifestageImage" destination="4LK-jB-FFg" id="Vrg-Qw-jSr"/>
                                     <outlet property="lifestageLabel" destination="h4P-R8-tbj" id="S1N-74-Ovm"/>
-                                    <segue destination="qjq-sG-0Zl" kind="show" id="wWv-3V-xwA"/>
+                                    <segue destination="qjq-sG-0Zl" kind="show" identifier="ShowLifestageDetails" id="wWv-3V-xwA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

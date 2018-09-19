@@ -13,6 +13,7 @@ class LifestagesViewController: UITableViewController {
     // MARK: Properties
     
     var lifestageCollection: [LifeStage] = []
+    var selectedRow = 0
     
     // MARK: Methods
     
@@ -21,6 +22,13 @@ class LifestagesViewController: UITableViewController {
         populateLifestageCollection()
         navigationController?.navigationBar.prefersLargeTitles = true
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowLifestageDetails" {
+            let lifestagesDetailViewController = segue.destination as! LifestagesDetailViewController
+            lifestagesDetailViewController.lifestage = lifestageCollection[selectedRow]
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +49,11 @@ extension LifestagesViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LifestageCell", for: indexPath) as! LifestageCell
         cell.setDetails(lifestage: lifestageCollection[indexPath.row])
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedRow = indexPath.row
+        return indexPath
     }
     
 }

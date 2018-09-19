@@ -18,6 +18,10 @@ class LifestagesDetailViewController: UIViewController {
     @IBOutlet weak var bulletPointOneFact: UILabel!
     @IBOutlet weak var bulletPointTwoFact: UILabel!
     
+    // MARK: Properties
+    
+    var lifestage: LifeStage!
+    
     // MARK: Methods
     
     override func viewDidLoad() {
