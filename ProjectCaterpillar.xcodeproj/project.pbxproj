@@ -18,11 +18,14 @@
 		4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213921504F1000CD5062 /* JournalEntry.swift */; };
 		4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213B21504FF400CD5062 /* Swallowtail.swift */; };
 		4335213E2150528300CD5062 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213D2150528300CD5062 /* User.swift */; };
+		43382EF82151912B00D39B47 /* JournalAddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43382EF72151912B00D39B47 /* JournalAddEntryViewController.swift */; };
 		43CEB5BC214FFEB000D7835C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEB5BB214FFEB000D7835C /* AppDelegate.swift */; };
 		43CEB5C1214FFEB000D7835C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CEB5BF214FFEB000D7835C /* Main.storyboard */; };
 		43CEB5C3214FFEB300D7835C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43CEB5C2214FFEB300D7835C /* Assets.xcassets */; };
 		43CEB5C6214FFEB300D7835C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43CEB5C4214FFEB300D7835C /* LaunchScreen.storyboard */; };
 		43CEB5CE215174DC00D7835C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEB5CD215174DC00D7835C /* HomeViewController.swift */; };
+		43E867EA2151690F00BDBBC5 /* JournalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E867E92151690F00BDBBC5 /* JournalListViewController.swift */; };
+		43E867EE2151762200BDBBC5 /* JournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E867ED2151762200BDBBC5 /* JournalDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,7 @@
 		4335213921504F1000CD5062 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		4335213B21504FF400CD5062 /* Swallowtail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swallowtail.swift; sourceTree = "<group>"; };
 		4335213D2150528300CD5062 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		43382EF72151912B00D39B47 /* JournalAddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAddEntryViewController.swift; sourceTree = "<group>"; };
 		43CEB5B8214FFEB000D7835C /* ProjectCaterpillar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectCaterpillar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CEB5BB214FFEB000D7835C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43CEB5C0214FFEB000D7835C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 		43CEB5C5214FFEB300D7835C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43CEB5C7214FFEB300D7835C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43CEB5CD215174DC00D7835C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		43E867E92151690F00BDBBC5 /* JournalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListViewController.swift; sourceTree = "<group>"; };
+		43E867ED2151762200BDBBC5 /* JournalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,9 @@
 			children = (
 				43CEB5CD215174DC00D7835C /* HomeViewController.swift */,
 				17848EE22151257B00625D4C /* TabBarViewController.swift */,
+				43E867ED2151762200BDBBC5 /* JournalDetailViewController.swift */,
+				43382EF72151912B00D39B47 /* JournalAddEntryViewController.swift */,
+				43E867E92151690F00BDBBC5 /* JournalListViewController.swift */,
 				17848EEA21516A4300625D4C /* LifestagesViewController.swift */,
 			);
 			path = Controllers;
@@ -197,10 +206,13 @@
 			files = (
 				433521382150488000CD5062 /* LifeStage.swift in Sources */,
 				4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */,
+				43E867EA2151690F00BDBBC5 /* JournalListViewController.swift in Sources */,
+				43E867EE2151762200BDBBC5 /* JournalDetailViewController.swift in Sources */,
 				17848EED21516F2500625D4C /* LifestageCell.swift in Sources */,
 				17848EEF2151969E00625D4C /* LifestagesDatabase.swift in Sources */,
 				4335213E2150528300CD5062 /* User.swift in Sources */,
 				17848EEB21516A4300625D4C /* LifestagesViewController.swift in Sources */,
+				43382EF82151912B00D39B47 /* JournalAddEntryViewController.swift in Sources */,
 				4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */,
 				17848EE32151257B00625D4C /* TabBarViewController.swift in Sources */,
 				43CEB5CE215174DC00D7835C /* HomeViewController.swift in Sources */,
