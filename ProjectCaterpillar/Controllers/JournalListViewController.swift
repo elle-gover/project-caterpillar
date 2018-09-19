@@ -33,6 +33,11 @@ class JournalListViewController: UITableViewController {
     func useLargeTitles() {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+    
+    func swipeToDelete(indexPath: IndexPath) {
+        journalEntries.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+    }
 
     // MARK: - Table view data source
 
@@ -44,6 +49,12 @@ class JournalListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalList", for: indexPath)
         cell.textLabel?.text = "\(journalEntries[indexPath.row].title), \(journalEntries[indexPath.row].date) "
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            swipeToDelete(indexPath: indexPath)
+        }
     }
 
     /*
