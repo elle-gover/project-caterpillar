@@ -88,7 +88,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         nameDisplayLabel.isHidden = true
         petNameDisplayLabel.isHidden = true
         
-        var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
+        var swallowTail = Swallowtail(name: "", startDate: "", stageOfLife: lifeStagesDatabase.lifestages[0])
         pet = swallowTail
         
     }

@@ -11,13 +11,11 @@ import Foundation
 class Swallowtail: Codable {
     var name: String
     var startDate: String
-    var imgFileName: String // using string instead of img so we can save to .plist
     var stageOfLife: LifeStage
     
-    init(name: String, startDate: String, imgFileName: String, stageOfLife: LifeStage) {
+    init(name: String, startDate: String, stageOfLife: LifeStage) {
         self.name = name
         self.startDate = startDate
-        self.imgFileName = imgFileName
         self.stageOfLife = stageOfLife
     }
     
