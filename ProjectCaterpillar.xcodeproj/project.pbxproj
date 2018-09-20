@@ -15,6 +15,7 @@
 		17848EED21516F2500625D4C /* LifestageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17848EEC21516F2500625D4C /* LifestageCell.swift */; };
 		17848EEF2151969E00625D4C /* LifestagesDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17848EEE2151969E00625D4C /* LifestagesDatabase.swift */; };
 		17848EF1215282E500625D4C /* LifestagesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17848EF0215282E500625D4C /* LifestagesDetailViewController.swift */; };
+		432E33BE215422E4008158B7 /* JournalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432E33BD215422E4008158B7 /* JournalCell.swift */; };
 		433521382150488000CD5062 /* LifeStage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433521372150488000CD5062 /* LifeStage.swift */; };
 		4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213921504F1000CD5062 /* JournalEntry.swift */; };
 		4335213C21504FF400CD5062 /* Swallowtail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4335213B21504FF400CD5062 /* Swallowtail.swift */; };
@@ -38,6 +39,7 @@
 		17848EEC21516F2500625D4C /* LifestageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestageCell.swift; sourceTree = "<group>"; };
 		17848EEE2151969E00625D4C /* LifestagesDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestagesDatabase.swift; sourceTree = "<group>"; };
 		17848EF0215282E500625D4C /* LifestagesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestagesDetailViewController.swift; sourceTree = "<group>"; };
+		432E33BD215422E4008158B7 /* JournalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalCell.swift; sourceTree = "<group>"; };
 		433521372150488000CD5062 /* LifeStage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStage.swift; sourceTree = "<group>"; };
 		4335213921504F1000CD5062 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		4335213B21504FF400CD5062 /* Swallowtail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swallowtail.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				4335213B21504FF400CD5062 /* Swallowtail.swift */,
 				17848EEC21516F2500625D4C /* LifestageCell.swift */,
 				17848EEE2151969E00625D4C /* LifestagesDatabase.swift */,
+				432E33BD215422E4008158B7 /* JournalCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				17848EEF2151969E00625D4C /* LifestagesDatabase.swift in Sources */,
 				4335213E2150528300CD5062 /* User.swift in Sources */,
 				17848EEB21516A4300625D4C /* LifestagesViewController.swift in Sources */,
+				432E33BE215422E4008158B7 /* JournalCell.swift in Sources */,
 				43382EF82151912B00D39B47 /* JournalAddEntryViewController.swift in Sources */,
 				4335213A21504F1000CD5062 /* JournalEntry.swift in Sources */,
 				17848EE32151257B00625D4C /* TabBarViewController.swift in Sources */,
