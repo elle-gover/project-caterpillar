@@ -91,7 +91,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         petNameLabel.isHidden = true
         lifeStagePickerDisplayLabel.isHidden = true
         nameDisplayLabel.text = "Welcome \(user!.name)!"
-        petNameDisplayLabel.text = "Your pet \(pet!.name) is the \(pet!.stageOfLife.name)!" 
+        petNameDisplayLabel.text = "Your pet \(pet!.name) is in the \(pet!.stageOfLife.name)!" 
         addButtonOutlet.isHidden = true
         infoDisplayLabel.isHidden = false
         infoDisplayLabel.text = "Click the lifestages tab below to learn more about your new pet, or check out the journal to keep track of your pet’s progress! \n\nToday's Date: \(formattedDate())"
