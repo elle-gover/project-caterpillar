@@ -32,6 +32,9 @@ class JournalAddEntryViewController: UITableViewController {
         lifestagePicker.dataSource = self
         lifestagePicker.delegate = self
         
+        detailsView.text = "Write your entry here..."
+        detailsView.textColor = UIColor.lightGray
+        
         titleField.becomeFirstResponder()
         
         textViewDidEndEditing(detailsView)
@@ -58,9 +61,6 @@ class JournalAddEntryViewController: UITableViewController {
     // Journal entry textView placeholder function1
     func textViewDidBeginEditing(_ detailsView: UITextView) {
         
-        detailsView.text = "Write your entry here..."
-        detailsView.textColor = UIColor.lightGray
-        
         if detailsView.textColor == UIColor.lightGray {
             detailsView.text = ""
             detailsView.textColor = UIColor.black
@@ -71,6 +71,7 @@ class JournalAddEntryViewController: UITableViewController {
     }
     // Journal entry textView placeholder function2
     func textViewDidEndEditing(_ detailsView: UITextView) {
+        
         if detailsView.text.isEmpty {
             detailsView.text = "Write your entry here..."
             detailsView.textColor = UIColor.lightGray
