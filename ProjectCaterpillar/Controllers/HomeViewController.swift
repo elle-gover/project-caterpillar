@@ -46,10 +46,42 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     @IBOutlet weak var infoDisplayLabel: UILabel!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let checkForFile = checkForLoadFile()
+        populateLifeStage()
+        print(dataFilePath())
+        
+        nameDisplayLabel.isHidden = true
+        petNameDisplayLabel.isHidden = true
+        
+        if checkForFile {
+            load()
+            loadImage(image: updatePetIcon())
+            toggleDisplayData()
+        } else {
+            userNameTextField.becomeFirstResponder()
+            loadImage(image: userPetIcon)
+            updateUserButtonOutlet.isHidden = true
+            nameDisplayLabel.isHidden = true
+            petNameDisplayLabel.isHidden = true
+            infoDisplayLabel.isHidden = true
+            let swallowTail = Swallowtail(name: "", startDate: "", stageOfLife: lifeStagesDatabase.lifestages[0])
+            pet = swallowTail
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: - Methods
     
     func loadImage(image: String) {
         homeScreenImage.image = UIImage(named: image)
-
     }
     
     func updatePetIcon() -> String {
@@ -85,7 +117,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     }
     
     func updateUserData() {
-//        updatePetIcon()
         infoDisplayLabel.isHidden = true
         updateUserButtonOutlet.isHidden = true
         addButtonOutlet.isHidden = false
@@ -99,6 +130,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         userDisplayLabel.isHidden = false
         userNameTextField.isHidden = false
         lifeStagePicker.isHidden = false
+        dateLabel.isHidden = true
     }
     
     func toggleDisplayData() {
@@ -110,12 +142,14 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         petNameDisplayLabel.isHidden = false
         petNameLabel.isHidden = true
         lifeStagePickerDisplayLabel.isHidden = true
-        nameDisplayLabel.text = "Welcome \(user!.name)!"
-        petNameDisplayLabel.text = "Your pet \(pet!.name) is in the \(pet!.stageOfLife.name)!" 
+        nameDisplayLabel.text = "Welcome, \(user!.name)!"
+        petNameDisplayLabel.text = "Your pet \(pet!.name) is in the \(pet!.stageOfLife.name)!"
         addButtonOutlet.isHidden = true
         updateUserButtonOutlet.isHidden = false
         infoDisplayLabel.isHidden = false
-        infoDisplayLabel.text = "Click the lifestages tab below to learn more about your new pet, or check out the journal to keep track of your pet’s progress! \n\nToday's Date: \(formattedDate())"
+        dateLabel.isHidden = false
+        infoDisplayLabel.text = "Click the lifestages tab below to learn more about your new pet, or check out the journal to keep track of your pet’s progress!"
+        dateLabel.text = "Today is \(formattedDate())"
 
     }
     
@@ -136,37 +170,8 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         
         return dateFormatter.string(from: formattedToday!)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let checkForFile = checkForLoadFile()
-        populateLifeStage()
-        print(dataFilePath())
-
-        nameDisplayLabel.isHidden = true
-        petNameDisplayLabel.isHidden = true
-
-        if checkForFile {
-            load()
-            loadImage(image: updatePetIcon())
-            toggleDisplayData()
-        } else {
-            userNameTextField.becomeFirstResponder()
-            loadImage(image: userPetIcon)
-            updateUserButtonOutlet.isHidden = true
-            nameDisplayLabel.isHidden = true
-            petNameDisplayLabel.isHidden = true
-            infoDisplayLabel.isHidden = true
-            var swallowTail = Swallowtail(name: "", startDate: "", stageOfLife: lifeStagesDatabase.lifestages[0])
-            pet = swallowTail
-        }
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
+
 
 // MARK: Save and Load user functionality
 
