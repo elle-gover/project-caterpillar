@@ -29,13 +29,13 @@ class SaveData {
         }
     }
     
-    func loadContacts(for user: [User]) {
+    func load(for user: User) {
         var user = user
         let path = dataFilePath()
         if let data = try? Data(contentsOf: path) {
             let decoder = PropertyListDecoder()
             do {
-                user = try decoder.decode([User].self, from: data)
+                user = try decoder.decode(User.self, from: data)
             } catch {
                 print("Error decoding object array")
             }

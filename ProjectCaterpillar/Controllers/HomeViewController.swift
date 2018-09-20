@@ -93,20 +93,29 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func checkForLoadFile() -> Bool {
        let fileManager = FileManager()
-        
-        if fileManager.fileExists(atPath: saveData.documentsDirectory()) {
-            return true
-        }
-        
-        return false
+       let filePath = saveData.dataFilePath().path
+       
+       return fileManager.fileExists(atPath: filePath)
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadImage()
+        
+        print(checkForLoadFile())
+
+        if checkForLoadFile() {
+            guard let user = user else { return }
+            saveData.load(for: user)
+            print(user)
+            toggleDisplayData()
+        } else {
+            loadImage()
+            nameDisplayLabel.isHidden = true
+            petNameDisplayLabel.isHidden = true
+        }
+        
         populateLifeStage()
-        nameDisplayLabel.isHidden = true
-        petNameDisplayLabel.isHidden = true
         
         var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
         pet = swallowTail
