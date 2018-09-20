@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xb2-tS-vJc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xb2-tS-vJc">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,12 +29,14 @@
                                         <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4LK-jB-FFg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="150" id="C4v-Z7-D3B"/>
+                                                <constraint firstAttribute="height" constant="150" id="Tfg-tY-lFC"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-R8-tbj">
-                                            <rect key="frame" x="16" y="104" width="318" height="35"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4P-R8-tbj">
+                                            <rect key="frame" x="21" y="104" width="338" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="338" id="Ioi-Qa-Sf1"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="30"/>
                                             <color key="textColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -44,10 +46,13 @@
                                     </subviews>
                                     <color key="tintColor" red="0.32549019610000002" green="0.49803921569999998" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="leading" secondItem="77s-Bw-qeJ" secondAttribute="leading" id="F5m-PW-KjU"/>
-                                        <constraint firstAttribute="trailing" secondItem="4LK-jB-FFg" secondAttribute="trailing" id="SZ1-F7-l9G"/>
-                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="top" secondItem="77s-Bw-qeJ" secondAttribute="top" id="pKG-EG-P6F"/>
-                                        <constraint firstAttribute="bottom" secondItem="4LK-jB-FFg" secondAttribute="bottom" id="vEx-CT-xpG"/>
+                                        <constraint firstAttribute="bottom" secondItem="h4P-R8-tbj" secondAttribute="bottom" constant="10" id="BoV-JV-kUQ"/>
+                                        <constraint firstAttribute="trailing" secondItem="4LK-jB-FFg" secondAttribute="trailing" id="TSx-SS-3Wl"/>
+                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="top" secondItem="77s-Bw-qeJ" secondAttribute="top" id="a1o-Gr-jjS"/>
+                                        <constraint firstItem="h4P-R8-tbj" firstAttribute="top" secondItem="77s-Bw-qeJ" secondAttribute="top" constant="104" id="acf-o7-8yM"/>
+                                        <constraint firstAttribute="bottom" secondItem="4LK-jB-FFg" secondAttribute="bottom" id="fTg-nN-CBm"/>
+                                        <constraint firstItem="h4P-R8-tbj" firstAttribute="leading" secondItem="77s-Bw-qeJ" secondAttribute="leading" constant="21" id="lnD-L0-MhQ"/>
+                                        <constraint firstItem="4LK-jB-FFg" firstAttribute="leading" secondItem="77s-Bw-qeJ" secondAttribute="leading" id="u0Y-Q8-don"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.49803921569999998" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
