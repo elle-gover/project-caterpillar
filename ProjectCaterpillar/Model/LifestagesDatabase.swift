@@ -30,7 +30,7 @@ struct LifestagesDatabase {
                                    imgFile: "lifestage3",
                                    bulletPoints: ["Inside the chysalis the real action is happening called metamorphosis!", "Tissue, limbs and organs of a caterpillar have all been changed by the time the pupa is finished, and is now ready for the final stage of a butterfly’s life cycle."], iconFile: "chrysalis"),
     
-                    LifeStage(name: "Adult Butterfly",
+                    LifeStage(name: "Butterfly Stage",
                                    food: "All the leaves!",
                                    stageDescription: "When the butterfly first emerges from the chrysalis, both of the wings are going to be soft and folded against its body. This is because the butterfly had to fit all its new parts inside of the pupa.",
                                    imgFile: "lifestage4",
