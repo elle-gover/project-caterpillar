@@ -24,12 +24,17 @@ class JournalAddEntryViewController: UITableViewController {
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var lifestagePicker: UIPickerView!
     @IBOutlet weak var detailsView: UITextView!
+
     
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         lifestagePicker.dataSource = self
         lifestagePicker.delegate = self
+        
+        titleField.becomeFirstResponder()
+        
+        textViewDidEndEditing(detailsView)
     }
 
     // temporary lifestage data, replace w/ real lifestages from database
@@ -49,6 +54,28 @@ class JournalAddEntryViewController: UITableViewController {
         return newEntry!
     }
 }
+
+    // Journal entry textView placeholder function1
+    func textViewDidBeginEditing(_ detailsView: UITextView) {
+        
+        detailsView.text = "Write your entry here..."
+        detailsView.textColor = UIColor.lightGray
+        
+        if detailsView.textColor == UIColor.lightGray {
+            detailsView.text = ""
+            detailsView.textColor = UIColor.black
+        } else {
+            detailsView.textColor = UIColor.black
+        }
+        
+    }
+    // Journal entry textView placeholder function2
+    func textViewDidEndEditing(_ detailsView: UITextView) {
+        if detailsView.text.isEmpty {
+            detailsView.text = "Write your entry here..."
+            detailsView.textColor = UIColor.lightGray
+        }
+    }
 
 extension JournalAddEntryViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
