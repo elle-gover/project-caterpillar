@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     var user: User?
     var pet: Swallowtail?
     var lifeStages: [LifeStage] = []
+    var userPetIcon = "Butterfly"
     
     @IBOutlet weak var userNameTextField: UITextField!
     
@@ -26,9 +27,11 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         guard let user = user else { return }
         save(information: user)
         toggleDisplayData()
+    loadImage(image: updatePetIcon())
+     
     }
     
-    
+    @IBOutlet weak var userDisplayLabel: UILabel!
     @IBOutlet weak var petNameLabel: UILabel!
     
     @IBOutlet weak var nameDisplayLabel: UILabel!
@@ -36,9 +39,20 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var petNameDisplayLabel: UILabel!
     @IBOutlet weak var lifeStagePickerDisplayLabel: UILabel!
     
-    func loadImage() {
-        homeScreenImage.image = UIImage(named: "Butterfly")
+    @IBOutlet weak var infoDisplayLabel: UILabel!
+    
+    
+    func loadImage(image: String) {
+        homeScreenImage.image = UIImage(named: image)
+
     }
+    
+    func updatePetIcon() -> String {
+        guard let userPetIcon = pet?.stageOfLife.iconFile else { return "Butterfly" }
+    return userPetIcon
+    }
+    
+    
     
     @IBOutlet weak var addButtonOutlet: UIButton!
     
@@ -59,7 +73,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         pet?.name = petNameTextField.text!
         pet?.stageOfLife = lifeStages[lifeStagePicker.selectedRow(inComponent: 0)]
         user = User(name: newUserName, pet: pet!)
-        
     }
     
     func populateLifeStage() {
@@ -71,14 +84,17 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     func toggleDisplayData() {
         lifeStagePicker.isHidden = true
         userNameTextField.isHidden = true
+        userDisplayLabel.isHidden = true
         petNameTextField.isHidden = true
         nameDisplayLabel.isHidden = false
         petNameDisplayLabel.isHidden = false
         petNameLabel.isHidden = true
         lifeStagePickerDisplayLabel.isHidden = true
-        nameDisplayLabel.text = user?.name
-        petNameDisplayLabel.text = pet?.name
+        nameDisplayLabel.text = "Welcome \(user!.name)!"
+        petNameDisplayLabel.text = "Your pet \(pet!.name) is the \(pet!.stageOfLife.name)!" 
         addButtonOutlet.isHidden = true
+        infoDisplayLabel.isHidden = false
+        infoDisplayLabel.text = "Click the lifestages tab below to learn more about your new pet, or check out the journal to keep track of your pet’s progress! \n\nToday's Date: \(formattedDate())"
 
     }
     
@@ -89,19 +105,32 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
        return fileManager.fileExists(atPath: filePath)
     }
     
+    func formattedDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
+        let today = Date()
+        let todayString = dateFormatter.string(from: today)
+        let formattedToday = dateFormatter.date(from: todayString)
+        
+        return dateFormatter.string(from: formattedToday!)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let checkForFile = checkForLoadFile()
         populateLifeStage()
-        
+
         if checkForFile {
-            //MARK: TODO: From saveData.load, user is nil
             load()
+            loadImage(image: userPetIcon)
             toggleDisplayData()
         } else {
-            loadImage()
+            userNameTextField.becomeFirstResponder()
+            loadImage(image: userPetIcon)
             nameDisplayLabel.isHidden = true
             petNameDisplayLabel.isHidden = true
+            infoDisplayLabel.isHidden = true
             var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
             pet = swallowTail
         }
@@ -109,9 +138,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
-
 }
 
 // MARK: Save and Load user functionality
