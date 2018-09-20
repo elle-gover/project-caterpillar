@@ -8,42 +8,47 @@
 
 import UIKit
 
+protocol JournalDetailViewControllerDelegate: class {
+    func detailVC(_ controller: JournalDetailViewController, didFinishEditing item: JournalEntry)
+}
+
 class JournalDetailViewController: UITableViewController {
+    
+    // MARK: - Properties
     let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
+    weak var delegate: JournalDetailViewControllerDelegate?
+    var entryToShow: JournalEntry?
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var lifestageLabel: UILabel!
-    
     @IBOutlet weak var detailsView: UITextView!
-    
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var lifestagePicker: UIPickerView!
-    
-    // dummy data to use for now - remove when we start passing in real data:
-    var entry1 = JournalEntry(title: "Example Entry", stageOfLife: egg, details: "Found this egg and it's sweet", date: "Sep 18 2018")
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         displayEntryData()
         populateTextFields()
         enableLifestagePicker()
-        toggleFieldVisibility()
-        togglePickerVisibility()
+        toggleEditItems()
     }
     
     func displayEntryData() {
-        titleLabel.text = entry1.title
-        dateLabel.text = entry1.date
-        lifestageLabel.text = entry1.stageOfLife.name
-        detailsView.text = entry1.details
+        guard let entry = entryToShow else { return }
+        titleLabel.text = entry.title
+        dateLabel.text = entry.date
+        lifestageLabel.text = entry.stageOfLife.name
+        detailsView.text = entry.details
     }
     
     func populateTextFields() {
-        titleField.text = entry1.title
-        dateField.text = entry1.date
+        guard let entry = entryToShow else { titleField.text = ""; dateField.text = "" ; return }
+        titleField.text = entry.title
+        dateField.text = entry.date
     }
     
     func enableLifestagePicker() {
@@ -66,10 +71,35 @@ class JournalDetailViewController: UITableViewController {
         lifestagePicker.isHidden = !lifestagePicker.isHidden
     }
     
-    @IBAction func editButton(_ sender: Any) {
+    func toggleSaveButtonIsEnabled() {
+        saveBarButton.isEnabled = !saveBarButton.isEnabled
+    }
+    
+    func toggleEditItems() {
         toggleFieldVisibility()
-        toggleLabelVisibility()
         togglePickerVisibility()
+        toggleSaveButtonIsEnabled()
+    }
+    
+    @IBAction func editButton(_ sender: Any) {
+        titleField.becomeFirstResponder()
+        toggleEditItems()
+        toggleLabelVisibility()
+    }
+    
+    @IBAction func save(_ sender: UIBarButtonItem) {
+        guard let entryToUpdate = entryToShow else { return }
+        
+        guard let updatedTitle = titleField.text else { return }
+        entryToUpdate.title = updatedTitle
+        
+        guard let updatedDate = dateField.text else { return }
+        entryToUpdate.date = updatedDate
+        
+        guard let updatedDetails = detailsView.text else { return }
+        entryToUpdate.details = updatedDetails
+        
+        delegate?.detailVC(self, didFinishEditing: entryToUpdate)
     }
 }
 
