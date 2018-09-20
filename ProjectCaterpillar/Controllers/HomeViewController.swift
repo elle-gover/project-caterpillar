@@ -18,9 +18,8 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var petNameTextField: UITextField!
-    
+
     @IBOutlet weak var homeScreenImage: UIImageView!
-    
     @IBAction func addButton(_ sender: UIButton) {
        collectUserData()
         toggleDisplayData()
