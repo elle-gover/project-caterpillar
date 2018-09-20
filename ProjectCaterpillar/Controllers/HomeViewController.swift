@@ -21,8 +21,11 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     @IBOutlet weak var petNameTextField: UITextField!
 
     @IBOutlet weak var homeScreenImage: UIImageView!
+        
     @IBAction func addButton(_ sender: UIButton) {
-       collectUserData()
+        collectUserData()
+        guard let user = user else { return }
+        save(information: user)
         toggleDisplayData()
     loadImage(image: updatePetIcon())
      
@@ -70,8 +73,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         pet?.name = petNameTextField.text!
         pet?.stageOfLife = lifeStages[lifeStagePicker.selectedRow(inComponent: 0)]
         user = User(name: newUserName, pet: pet!)
-
-        
     }
     
     func populateLifeStage() {
@@ -97,6 +98,13 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 
     }
     
+    func checkForLoadFile() -> Bool {
+       let fileManager = FileManager()
+       let filePath = dataFilePath().path
+       
+       return fileManager.fileExists(atPath: filePath)
+    }
+    
     func formattedDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy"
@@ -106,27 +114,66 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         let formattedToday = dateFormatter.date(from: todayString)
         
         return dateFormatter.string(from: formattedToday!)
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadImage(image: userPetIcon)
+        let checkForFile = checkForLoadFile()
         populateLifeStage()
-        userNameTextField.becomeFirstResponder()
-        nameDisplayLabel.isHidden = true
-        petNameDisplayLabel.isHidden = true
-        infoDisplayLabel.isHidden = true
-        
-        var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
-        pet = swallowTail
-        
+
+        if checkForFile {
+            load()
+            loadImage(image: updatePetIcon())
+            toggleDisplayData()
+        } else {
+            userNameTextField.becomeFirstResponder()
+            loadImage(image: userPetIcon)
+            nameDisplayLabel.isHidden = true
+            petNameDisplayLabel.isHidden = true
+            infoDisplayLabel.isHidden = true
+            var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
+            pet = swallowTail
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
+}
 
+// MARK: Save and Load user functionality
+
+extension HomeViewController {
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("SavedData.plist")
+    }
+    
+    func save(information: User) {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(information)
+            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+        } catch {
+            print("Error saving data")
+        }
+    }
+    
+    func load() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                user = try decoder.decode(User.self, from: data)
+                pet = user?.pet
+            } catch {
+                print("Error decoding object")
+            }
+        }
+    }
 }
