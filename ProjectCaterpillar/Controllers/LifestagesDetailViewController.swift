@@ -9,6 +9,7 @@
 import UIKit
 
 class LifestagesDetailViewController: UIViewController {
+    
     // MARK: Outlets
     
     @IBOutlet weak var lifestageDetailImage: UIImageView!
