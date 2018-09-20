@@ -28,7 +28,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
      
     }
     
-    
     @IBOutlet weak var petNameLabel: UILabel!
     
     @IBOutlet weak var nameDisplayLabel: UILabel!
@@ -38,7 +37,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     
     func loadImage(image: String) {
         homeScreenImage.image = UIImage(named: image)
-//        if userPetIcon
+
     }
     
     func updatePetIcon() -> String {
@@ -67,8 +66,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         pet?.name = petNameTextField.text!
         pet?.stageOfLife = lifeStages[lifeStagePicker.selectedRow(inComponent: 0)]
         user = User(name: newUserName, pet: pet!)
-//        print(user?.name)
-//        print(pet?.stageOfLife.name)
+
         
     }
     
@@ -96,6 +94,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         super.viewDidLoad()
         loadImage(image: userPetIcon)
         populateLifeStage()
+        userNameTextField.becomeFirstResponder()
         nameDisplayLabel.isHidden = true
         petNameDisplayLabel.isHidden = true
         
