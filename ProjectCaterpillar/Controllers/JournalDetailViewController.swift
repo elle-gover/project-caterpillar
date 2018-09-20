@@ -15,7 +15,8 @@ protocol JournalDetailViewControllerDelegate: class {
 class JournalDetailViewController: UITableViewController {
     
     // MARK: - Properties
-    let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
+    let lifeStagesDatabase = LifestagesDatabase()
+    var lifeStages: [LifeStage] = []
     weak var delegate: JournalDetailViewControllerDelegate?
     var entryToShow: JournalEntry?
     
@@ -31,6 +32,7 @@ class JournalDetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateLifeStage()
         displayEntryData()
         populateTextFields()
         enableLifestagePicker()
@@ -49,6 +51,12 @@ class JournalDetailViewController: UITableViewController {
         guard let entry = entryToShow else { titleField.text = ""; dateField.text = "" ; return }
         titleField.text = entry.title
         dateField.text = entry.date
+    }
+    
+    func populateLifeStage() {
+        for stage in lifeStagesDatabase.lifestages {
+            lifeStages.append(stage)
+        }
     }
     
     func enableLifestagePicker() {
@@ -109,7 +117,7 @@ extension JournalDetailViewController: UIPickerViewDataSource, UIPickerViewDeleg
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return lifeStages[row]
+        return lifeStages[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
