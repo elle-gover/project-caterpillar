@@ -123,7 +123,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 
         if checkForFile {
             load()
-            loadImage(image: userPetIcon)
+            loadImage(image: updatePetIcon())
             toggleDisplayData()
         } else {
             userNameTextField.becomeFirstResponder()
