@@ -82,6 +82,7 @@ class JournalDetailViewController: UITableViewController {
     }
     
     @IBAction func editButton(_ sender: Any) {
+        titleField.becomeFirstResponder()
         toggleEditItems()
         toggleLabelVisibility()
     }
