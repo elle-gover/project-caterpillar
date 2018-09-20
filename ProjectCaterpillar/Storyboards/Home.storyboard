@@ -106,6 +106,18 @@
                                 <color key="textColor" red="0.3294117647" green="0.4941176471" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="67G-8R-KSS">
+                                <rect key="frame" x="132" y="539" width="111" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3294117647" green="0.4941176471" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="12"/>
+                                <state key="normal" title="Update User Info">
+                                    <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateUserInfoButton:" destination="VFQ-pp-NI6" eventType="touchUpInside" id="dZm-h1-0Qp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="jVe-jt-5M9"/>
@@ -121,6 +133,7 @@
                         <outlet property="petNameDisplayLabel" destination="WoS-BK-sUI" id="o7v-OX-DYh"/>
                         <outlet property="petNameLabel" destination="cC0-Au-Voq" id="ZE0-7l-GIk"/>
                         <outlet property="petNameTextField" destination="dzw-aO-vHE" id="Ea3-sB-A4H"/>
+                        <outlet property="updateUserButtonOutlet" destination="67G-8R-KSS" id="u7Y-kS-VC0"/>
                         <outlet property="userDisplayLabel" destination="nBu-GV-jNA" id="bbZ-oy-xhw"/>
                         <outlet property="userNameTextField" destination="XWG-Ix-mez" id="Ezr-jg-Ylj"/>
                     </connections>

@@ -31,6 +31,11 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
      
     }
     
+    @IBOutlet weak var updateUserButtonOutlet: UIButton!
+    @IBAction func updateUserInfoButton(_ sender: UIButton) {
+//        toggleDisplayData()
+        updateUserData()
+    }
     @IBOutlet weak var userDisplayLabel: UILabel!
     @IBOutlet weak var petNameLabel: UILabel!
     
@@ -51,8 +56,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         guard let userPetIcon = pet?.stageOfLife.iconFile else { return "Butterfly" }
     return userPetIcon
     }
-    
-    
     
     @IBOutlet weak var addButtonOutlet: UIButton!
     
@@ -81,6 +84,23 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         }
     }
     
+    func updateUserData() {
+//        updatePetIcon()
+        infoDisplayLabel.isHidden = true
+        updateUserButtonOutlet.isHidden = true
+        addButtonOutlet.isHidden = false
+        petNameDisplayLabel.isHidden = true
+        nameDisplayLabel.isHidden = true
+        lifeStagePickerDisplayLabel.isHidden = false
+        petNameLabel.isHidden = false
+        petNameDisplayLabel.isHidden = true
+        nameDisplayLabel.isHidden = true
+        petNameTextField.isHidden = false
+        userDisplayLabel.isHidden = false
+        userNameTextField.isHidden = false
+        lifeStagePicker.isHidden = false
+    }
+    
     func toggleDisplayData() {
         lifeStagePicker.isHidden = true
         userNameTextField.isHidden = true
@@ -91,8 +111,9 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         petNameLabel.isHidden = true
         lifeStagePickerDisplayLabel.isHidden = true
         nameDisplayLabel.text = "Welcome \(user!.name)!"
-        petNameDisplayLabel.text = "Your pet \(pet!.name) is the \(pet!.stageOfLife.name)!" 
+        petNameDisplayLabel.text = "Your pet \(pet!.name) is in the \(pet!.stageOfLife.name)!" 
         addButtonOutlet.isHidden = true
+        updateUserButtonOutlet.isHidden = false
         infoDisplayLabel.isHidden = false
         infoDisplayLabel.text = "Click the lifestages tab below to learn more about your new pet, or check out the journal to keep track of your pet’s progress! \n\nToday's Date: \(formattedDate())"
 
@@ -120,6 +141,10 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         super.viewDidLoad()
         let checkForFile = checkForLoadFile()
         populateLifeStage()
+        print(dataFilePath())
+
+        nameDisplayLabel.isHidden = true
+        petNameDisplayLabel.isHidden = true
 
         if checkForFile {
             load()
@@ -128,12 +153,14 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         } else {
             userNameTextField.becomeFirstResponder()
             loadImage(image: userPetIcon)
+            updateUserButtonOutlet.isHidden = true
             nameDisplayLabel.isHidden = true
             petNameDisplayLabel.isHidden = true
             infoDisplayLabel.isHidden = true
-            var swallowTail = Swallowtail(name: "", startDate: "", imgFileName: "", stageOfLife: lifeStagesDatabase.lifestages[0])
+            var swallowTail = Swallowtail(name: "", startDate: "", stageOfLife: lifeStagesDatabase.lifestages[0])
             pet = swallowTail
         }
+
     }
 
     override func didReceiveMemoryWarning() {
