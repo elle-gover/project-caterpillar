@@ -26,6 +26,7 @@ class JournalAddEntryViewController: UITableViewController {
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var lifestagePicker: UIPickerView!
     @IBOutlet weak var detailsView: UITextView!
+
     
     // MARK: - Methods
     override func viewDidLoad() {
@@ -33,6 +34,11 @@ class JournalAddEntryViewController: UITableViewController {
         populateLifeStage()
         lifestagePicker.dataSource = self
         lifestagePicker.delegate = self
+        
+        detailsView.text = "Write your entry here..."
+        detailsView.textColor = UIColor.lightGray
+        
+        titleField.becomeFirstResponder()
     }
 
     @IBAction func save() {
@@ -56,7 +62,9 @@ class JournalAddEntryViewController: UITableViewController {
     }
 }
 
+// MARK: - Extensions
 extension JournalAddEntryViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -67,5 +75,25 @@ extension JournalAddEntryViewController: UIPickerViewDataSource, UIPickerViewDel
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return lifeStages.count
+    }
+}
+
+extension JournalAddEntryViewController: UITextViewDelegate {
+   
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        
+        if detailsView.textColor == UIColor.lightGray {
+            detailsView.text = ""
+            detailsView.textColor = UIColor.black
+        }
+        return true
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        if detailsView.text.isEmpty {
+            detailsView.text = "Write your entry here..."
+            detailsView.textColor = UIColor.lightGray
+        }
     }
 }
