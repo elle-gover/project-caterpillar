@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
     var user: User?
     var pet: Swallowtail?
     var lifeStages: [LifeStage] = []
+    let saveData = SaveData()
     
     @IBOutlet weak var userNameTextField: UITextField!
     
@@ -21,7 +22,10 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 
     @IBOutlet weak var homeScreenImage: UIImageView!
     @IBAction func addButton(_ sender: UIButton) {
-       collectUserData()
+        collectUserData()
+        guard let user = user else { return }
+        getDocumentsFolder()
+        saveData.save(information: user)
         toggleDisplayData()
     }
     
@@ -79,6 +83,22 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         petNameDisplayLabel.text = pet?.name
         addButtonOutlet.isHidden = true
 
+    }
+    
+    func getDocumentsFolder() {
+        saveData.documentsDirectory()
+        saveData.dataFilePath()
+        print(saveData.dataFilePath())
+    }
+    
+    func checkForLoadFile() -> Bool {
+       let fileManager = FileManager()
+        
+        if fileManager.fileExists(atPath: saveData.documentsDirectory()) {
+            return true
+        }
+        
+        return false
     }
     
     override func viewDidLoad() {
