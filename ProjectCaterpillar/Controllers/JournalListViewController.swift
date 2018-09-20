@@ -10,12 +10,13 @@ import UIKit
 
 class JournalListViewController: UITableViewController {
     
+    @IBOutlet var entryListView: UITableView!
     // MARK: - Temporary Data
     var journalEntries: [JournalEntry] = []
     var selectedEntryIndex = 0
     
-    var entry1 = JournalEntry(title: "Example Entry", stageOfLife: egg, details: "Found this egg and it's sweet", date: "Sep 18 2018")
-    var entry2 = JournalEntry(title: "Another Entry", stageOfLife: caterpillar, details: "Aww it hatched", date: "Sep 20 2018")
+    var entry1 = JournalEntry(title: "Example Entry", stageOfLife: LifestagesDatabase().lifestages[0], details: "Found this egg and it's sweet", date: "Sep 18 2018")
+    var entry2 = JournalEntry(title: "Another Entry", stageOfLife: LifestagesDatabase().lifestages[1], details: "Aww it hatched", date: "Sep 20 2018")
     
     
     // MARK: - Methods
@@ -47,8 +48,8 @@ class JournalListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JournalList", for: indexPath)
-        cell.textLabel?.text = "\(journalEntries[indexPath.row].title), \(journalEntries[indexPath.row].date) "
+        let cell = tableView.dequeueReusableCell(withIdentifier: "JournalList", for: indexPath) as! JournalCell
+        cell.setJournalCellContent(journalEntry: journalEntries[indexPath.row])
         return cell
     }
     
@@ -102,8 +103,10 @@ extension JournalListViewController: JournalDetailViewControllerDelegate {
         guard let index = self.journalEntries.index(of: item) else { return }
         let indexPath = IndexPath(row: index, section: 0)
         
-        guard let cell = tableView.cellForRow(at: indexPath) else { return }
-        cell.textLabel?.text = item.title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "JournalList", for: indexPath) as? JournalCell else { return }
+        cell.setJournalCellContent(journalEntry: journalEntries[indexPath.row])
+        entryListView.reloadData()
+        
         navigationController?.popViewController(animated: true)
     }
 }
