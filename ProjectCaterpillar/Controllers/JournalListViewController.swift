@@ -10,6 +10,7 @@ import UIKit
 
 class JournalListViewController: UITableViewController {
     
+    @IBOutlet var entryListView: UITableView!
     // MARK: - Temporary Data
     var journalEntries: [JournalEntry] = []
     var selectedEntryIndex = 0
@@ -104,7 +105,8 @@ extension JournalListViewController: JournalDetailViewControllerDelegate {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "JournalList", for: indexPath) as? JournalCell else { return }
         cell.setJournalCellContent(journalEntry: journalEntries[indexPath.row])
-
+        entryListView.reloadData()
+        
         navigationController?.popViewController(animated: true)
     }
 }
