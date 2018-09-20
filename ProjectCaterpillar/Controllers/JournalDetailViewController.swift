@@ -8,8 +8,16 @@
 
 import UIKit
 
+protocol JournalDetailViewControllerDelegate: class {
+    func detailVC(_ controller: JournalDetailViewController, didFinishEditing item: JournalEntry)
+}
+
 class JournalDetailViewController: UITableViewController {
+    
+    // MARK: - Properties
     let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
+    weak var delegate: JournalDetailViewControllerDelegate?
+    var entryToShow: JournalEntry?
     
     // MARK: - Outlets
     @IBOutlet weak var titleLabel: UILabel!
@@ -22,8 +30,7 @@ class JournalDetailViewController: UITableViewController {
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var lifestagePicker: UIPickerView!
     
-    // dummy data to use for now - remove when we start passing in real data:
-    var entry1 = JournalEntry(title: "Example Entry", stageOfLife: egg, details: "Found this egg and it's sweet", date: "Sep 18 2018")
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,15 +42,17 @@ class JournalDetailViewController: UITableViewController {
     }
     
     func displayEntryData() {
-        titleLabel.text = entry1.title
-        dateLabel.text = entry1.date
-        lifestageLabel.text = entry1.stageOfLife.name
-        detailsView.text = entry1.details
+        guard let entry = entryToShow else { return }
+        titleLabel.text = entry.title
+        dateLabel.text = entry.date
+        lifestageLabel.text = entry.stageOfLife.name
+        detailsView.text = entry.details
     }
     
     func populateTextFields() {
-        titleField.text = entry1.title
-        dateField.text = entry1.date
+        guard let entry = entryToShow else { titleField.text = ""; dateField.text = "" ; return }
+        titleField.text = entry.title
+        dateField.text = entry.date
     }
     
     func enableLifestagePicker() {
