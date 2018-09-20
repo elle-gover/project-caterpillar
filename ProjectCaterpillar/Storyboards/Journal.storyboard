@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="WMM-gs-vm4" kind="show" id="d1N-zc-LZz"/>
+                                    <segue destination="WMM-gs-vm4" kind="show" identifier="JournalListToDetail" id="d1N-zc-LZz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -160,12 +160,20 @@
                             <outlet property="delegate" destination="WMM-gs-vm4" id="e9e-tJ-a9A"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="ui3-0m-Piu">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="VA1-Un-tfq">
+                            <connections>
+                                <action selector="save:" destination="WMM-gs-vm4" id="YIN-bf-xTy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateField" destination="HRf-II-pPX" id="YBz-YD-eBK"/>
                         <outlet property="dateLabel" destination="rMD-Bb-VQG" id="4cc-x4-7HI"/>
                         <outlet property="detailsView" destination="P6P-3V-vGd" id="0e3-Wz-XfZ"/>
                         <outlet property="lifestageLabel" destination="BBX-Aw-1TD" id="dfY-Px-oaj"/>
                         <outlet property="lifestagePicker" destination="7KT-HZ-7U5" id="wiM-ym-hir"/>
+                        <outlet property="saveBarButton" destination="VA1-Un-tfq" id="fRa-97-PNL"/>
                         <outlet property="titleField" destination="tvG-Xq-Gff" id="SIH-T3-1rU"/>
                         <outlet property="titleLabel" destination="XsO-9Q-DD4" id="F8A-br-GXE"/>
                     </connections>
