@@ -104,6 +104,9 @@ class JournalDetailViewController: UITableViewController {
         guard let updatedDate = dateField.text else { return }
         entryToUpdate.date = updatedDate
         
+        let updatedLifeStage = lifeStages[lifestagePicker.selectedRow(inComponent: 0)]
+        entryToUpdate.stageOfLife = updatedLifeStage
+        
         guard let updatedDetails = detailsView.text else { return }
         entryToUpdate.details = updatedDetails
         
