@@ -97,7 +97,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         if checkForFile {
             //MARK: TODO: From saveData.load, user is nil
             load()
-            print(pet)
             toggleDisplayData()
         } else {
             loadImage()
