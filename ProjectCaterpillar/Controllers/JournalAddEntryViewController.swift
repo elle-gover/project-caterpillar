@@ -18,6 +18,8 @@ class JournalAddEntryViewController: UITableViewController {
     // MARK: - Properties
     weak var delegate: JournalAddEntryViewControllerDelegate?
     var newEntry: JournalEntry?
+    let lifeStagesDatabase = LifestagesDatabase()
+    var lifeStages: [LifeStage] = []
     
     // MARK: - Outlets
     @IBOutlet weak var titleField: UITextField!
@@ -28,13 +30,11 @@ class JournalAddEntryViewController: UITableViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateLifeStage()
         lifestagePicker.dataSource = self
         lifestagePicker.delegate = self
     }
 
-    // temporary lifestage data, replace w/ real lifestages from database
-    let lifeStages = ["Egg", "Caterpillar", "Butterfly"]
-    
     @IBAction func save() {
         let entry = createNewEntry()
         delegate?.add(self, didFinishAdding: entry)
@@ -45,8 +45,14 @@ class JournalAddEntryViewController: UITableViewController {
     }
     
     func createNewEntry() -> JournalEntry {
-        newEntry = JournalEntry(title: titleField.text!, stageOfLife: egg, details: detailsView.text!, date: dateField.text!)
+        newEntry = JournalEntry(title: titleField.text!, stageOfLife: lifeStages[lifestagePicker.selectedRow(inComponent: 0)], details: detailsView.text!, date: dateField.text!)
         return newEntry!
+    }
+    
+    func populateLifeStage() {
+        for stage in lifeStagesDatabase.lifestages {
+            lifeStages.append(stage)
+        }
     }
 }
 
@@ -56,7 +62,7 @@ extension JournalAddEntryViewController: UIPickerViewDataSource, UIPickerViewDel
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return lifeStages[row]
+        return lifeStages[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
