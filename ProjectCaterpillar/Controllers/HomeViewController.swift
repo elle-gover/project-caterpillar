@@ -31,6 +31,10 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
      
     }
     
+    @IBOutlet weak var updateUserButtonOutlet: UIButton!
+    @IBAction func updateUserInfoButton(_ sender: UIButton) {
+        toggleDisplayData()
+    }
     @IBOutlet weak var userDisplayLabel: UILabel!
     @IBOutlet weak var petNameLabel: UILabel!
     
@@ -51,8 +55,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         guard let userPetIcon = pet?.stageOfLife.iconFile else { return "Butterfly" }
     return userPetIcon
     }
-    
-    
     
     @IBOutlet weak var addButtonOutlet: UIButton!
     
@@ -128,6 +130,7 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
         } else {
             userNameTextField.becomeFirstResponder()
             loadImage(image: userPetIcon)
+            updateUserButtonOutlet.isHidden = true
             nameDisplayLabel.isHidden = true
             petNameDisplayLabel.isHidden = true
             infoDisplayLabel.isHidden = true
