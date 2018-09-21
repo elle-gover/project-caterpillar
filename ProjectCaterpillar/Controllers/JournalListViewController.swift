@@ -34,9 +34,13 @@ extension JournalListViewController {
             load()
         }
         else {
-            let sampleEntry = JournalEntry(title: "Welcome to your first journal!", stageOfLife: LifestagesDatabase().lifestages[3], details: "Edit or delete this entry to get started.", date: formattedDate())
+            let sampleEntry = createSampleEntry()
             journalEntries.append(sampleEntry)
         }
+    }
+    
+    func createSampleEntry() -> JournalEntry {
+        return JournalEntry(title: "Welcome to your first journal!", stageOfLife: LifestagesDatabase().lifestages[3], details: "Edit or delete this entry to get started.", date: formattedDate())
     }
     
     func useLargeTitles() {
