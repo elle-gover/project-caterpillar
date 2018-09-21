@@ -10,21 +10,25 @@ import UIKit
 
 class JournalListViewController: UITableViewController {
     
+    // MARK: - Outlets
     @IBOutlet var entryListView: UITableView!
-    // MARK: - Temporary Data
+    
+    // MARK: - Properties
     var journalEntries: [JournalEntry] = []
     var selectedEntryIndex = 0
     
     
-    // MARK: - Methods
-    
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         populateEntryArray()
         load()
         useLargeTitles()
     }
-    
+}
+
+// MARK: - Private Implementation
+extension JournalListViewController {
     func populateEntryArray() {
         if checkForLoadFile() {
             load()
@@ -54,13 +58,14 @@ class JournalListViewController: UITableViewController {
         
         return dateFormatter.string(from: formattedToday!)
     }
+}
 
-    // MARK: - Table view data source
-
+// MARK: - Table view data source
+extension JournalListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return journalEntries.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JournalList", for: indexPath) as! JournalCell
         cell.setJournalCellContent(journalEntry: journalEntries[indexPath.row])
@@ -78,9 +83,10 @@ class JournalListViewController: UITableViewController {
             save(entries: journalEntries)
         }
     }
+}
 
-    // MARK: - Navigation
-
+// MARK: - Navigation
+extension JournalListViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "JournalToAddEntry" {
             guard let add = segue.destination as? JournalAddEntryViewController else { return }
@@ -92,7 +98,6 @@ class JournalListViewController: UITableViewController {
             detail.delegate = self
         }
     }
-
 }
 
 // MARK: - JournalAddEntryViewControllerDelegate Protocol
