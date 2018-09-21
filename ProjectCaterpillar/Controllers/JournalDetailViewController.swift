@@ -32,6 +32,7 @@ class JournalDetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.9756241441, green: 0.9774035811, blue: 0.9244366288, alpha: 1)
         populateLifeStage()
         displayEntryData()
         populateTextFields()
