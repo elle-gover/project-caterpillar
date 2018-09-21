@@ -119,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="joey-logo" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-8c-hlA">
-                                <rect key="frame" x="131" y="40" width="112" height="56"/>
+                                <rect key="frame" x="131" y="37" width="112" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.98999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
