@@ -118,9 +118,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoMakr_4HfJKO" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-8c-hlA">
-                                <rect key="frame" x="56" y="52" width="285" height="44"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="joey-logo" translatesAutoresizingMaskIntoConstraints="NO" id="k7E-8c-hlA">
+                                <rect key="frame" x="131" y="40" width="112" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.98999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,7 +149,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LogoMakr_4HfJKO" width="600" height="377"/>
         <image name="home" width="30" height="30"/>
+        <image name="joey-logo" width="320" height="160"/>
     </resources>
 </document>
