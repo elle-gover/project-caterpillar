@@ -23,7 +23,8 @@ class JournalListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        populateEntryArray()
+        //populateEntryArray()
+        load()
         useLargeTitles()
     }
     
@@ -61,6 +62,7 @@ class JournalListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             swipeToDelete(indexPath: indexPath)
+            save(entries: journalEntries)
         }
     }
 
@@ -94,6 +96,8 @@ extension JournalListViewController: JournalAddEntryViewControllerDelegate {
         tableView.insertRows(at: [indexPath], with: .automatic)
         
         navigationController?.popViewController(animated: true)
+        
+        save(entries: journalEntries)
     }
 }
 
@@ -108,5 +112,42 @@ extension JournalListViewController: JournalDetailViewControllerDelegate {
         entryListView.reloadData()
         
         navigationController?.popViewController(animated: true)
+        
+        save(entries: journalEntries)
+    }
+}
+
+// MARK: - Data Persistence
+extension JournalListViewController {
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("JournalEntries.plist")
+    }
+    
+    func save(entries: [JournalEntry]) {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(entries)
+            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+        } catch {
+            print("Error saving data")
+        }
+    }
+    
+    func load() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+               journalEntries = try decoder.decode([JournalEntry].self, from: data)
+            } catch {
+                print("Error decoding object")
+            }
+        }
     }
 }
