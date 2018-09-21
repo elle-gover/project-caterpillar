@@ -15,21 +15,24 @@ class JournalListViewController: UITableViewController {
     var journalEntries: [JournalEntry] = []
     var selectedEntryIndex = 0
     
-    var entry1 = JournalEntry(title: "Example Entry", stageOfLife: LifestagesDatabase().lifestages[0], details: "Found this egg and it's sweet", date: "Sep 18 2018")
-    var entry2 = JournalEntry(title: "Another Entry", stageOfLife: LifestagesDatabase().lifestages[1], details: "Aww it hatched", date: "Sep 20 2018")
-    
     
     // MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         populateEntryArray()
+        load()
         useLargeTitles()
     }
     
     func populateEntryArray() {
-        journalEntries.append(entry1)
-        journalEntries.append(entry2)
+        if checkForLoadFile() {
+            load()
+        }
+        else {
+            let sampleEntry = JournalEntry(title: "Welcome to your first journal!", stageOfLife: LifestagesDatabase().lifestages[3], details: "Edit or delete this entry to get started.", date: formattedDate())
+            journalEntries.append(sampleEntry)
+        }
     }
     
     func useLargeTitles() {
@@ -39,6 +42,17 @@ class JournalListViewController: UITableViewController {
     func swipeToDelete(indexPath: IndexPath) {
         journalEntries.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+    }
+    
+    func formattedDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
+        let today = Date()
+        let todayString = dateFormatter.string(from: today)
+        let formattedToday = dateFormatter.date(from: todayString)
+        
+        return dateFormatter.string(from: formattedToday!)
     }
 
     // MARK: - Table view data source
@@ -61,6 +75,7 @@ class JournalListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             swipeToDelete(indexPath: indexPath)
+            save(entries: journalEntries)
         }
     }
 
@@ -94,6 +109,8 @@ extension JournalListViewController: JournalAddEntryViewControllerDelegate {
         tableView.insertRows(at: [indexPath], with: .automatic)
         
         navigationController?.popViewController(animated: true)
+        
+        save(entries: journalEntries)
     }
 }
 
@@ -108,5 +125,49 @@ extension JournalListViewController: JournalDetailViewControllerDelegate {
         entryListView.reloadData()
         
         navigationController?.popViewController(animated: true)
+        
+        save(entries: journalEntries)
+    }
+}
+
+// MARK: - Data Persistence
+extension JournalListViewController {
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("JournalEntries.plist")
+    }
+    
+    func save(entries: [JournalEntry]) {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(entries)
+            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
+        } catch {
+            print("Error saving data")
+        }
+    }
+    
+    func load() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+               journalEntries = try decoder.decode([JournalEntry].self, from: data)
+            } catch {
+                print("Error decoding object")
+            }
+        }
+    }
+    
+    func checkForLoadFile() -> Bool {
+        let fileManager = FileManager()
+        let filePath = dataFilePath().path
+        
+        return fileManager.fileExists(atPath: filePath)
     }
 }
