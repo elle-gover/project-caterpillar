@@ -14,7 +14,7 @@
             <objects>
                 <tableViewController id="Nk6-rF-gUM" customClass="JournalListViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eue-pf-5eJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -79,7 +79,7 @@
             <objects>
                 <tableViewController title="Entry" id="WMM-gs-vm4" customClass="JournalDetailViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2ST-9R-j62">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -218,7 +218,7 @@
                             <outlet property="delegate" destination="WMM-gs-vm4" id="e9e-tJ-a9A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="ui3-0m-Piu">
+                    <navigationItem key="navigationItem" id="ui3-0m-Piu">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="VA1-Un-tfq">
                             <connections>
                                 <action selector="save:" destination="WMM-gs-vm4" id="YIN-bf-xTy"/>
@@ -245,7 +245,7 @@
             <objects>
                 <tableViewController title="Add Entry" id="h2G-nf-EVn" customClass="JournalAddEntryViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GYj-44-EPj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -412,9 +412,18 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="liX-L1-UGo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Journal" image="book" largeContentSizeImage="book" selectedImage="book" id="hoy-Rm-2C1"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sFi-QE-yzr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="sFi-QE-yzr">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.3294117647" green="0.4941176471" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="17"/>
+                            <color key="textColor" red="0.97562414407730103" green="0.97740358114242554" blue="0.92443662881851196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="40"/>
+                            <color key="textColor" red="0.97562414407730103" green="0.97740358114242554" blue="0.92443662881851196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
