@@ -80,11 +80,11 @@
             <objects>
                 <viewController id="qjq-sG-0Zl" customClass="LifestagesDetailViewController" customModule="ProjectCaterpillar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eUo-PA-V2X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="732"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mzp-j2-kN5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="732"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJ7-YU-FYV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="440"/>
@@ -193,7 +193,6 @@
                         <viewLayoutGuide key="safeArea" id="nRT-BP-zk5"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <size key="freeformSize" width="375" height="820"/>
                     <connections>
                         <outlet property="bulletPointOneFact" destination="6ov-sM-Wr2" id="e7n-BL-0Vz"/>
                         <outlet property="bulletPointTwoFact" destination="dge-WW-fPD" id="zTK-zG-RSq"/>
