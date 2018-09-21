@@ -10,12 +10,14 @@ import UIKit
 
 class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    // MARK: - Properties
     let lifeStagesDatabase = LifestagesDatabase()
     var user: User?
     var pet: Swallowtail?
     var lifeStages: [LifeStage] = []
     var userPetIcon = "Butterfly"
     
+    // MARK: - IBOutlets
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var petNameTextField: UITextField!
     @IBOutlet weak var homeScreenImage: UIImageView!
@@ -164,7 +166,6 @@ class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerView
 }
 
 // MARK: Save and Load user functionality
-
 extension HomeViewController {
     
     func documentsDirectory() -> URL {
