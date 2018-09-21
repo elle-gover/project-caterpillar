@@ -90,6 +90,10 @@ class JournalDetailViewController: UITableViewController {
         toggleSaveButtonIsEnabled()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     @IBAction func editButton(_ sender: Any) {
         titleField.becomeFirstResponder()
         toggleEditItems()
